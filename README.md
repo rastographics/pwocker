@@ -11,10 +11,12 @@ I'm using this on a Windows 10 Pro 64-bit machine. So I know it works on that.
 
 ## Simple configuration
 1. Start the Nginx Proxy globally with one command (or just double-click the `proxy-up.cmd` file!)
-2. Copy the `docker-compose.yml` file into each processwire project you want to run. (Should be one level above the directory that contains `index.php`, `site`, and `wire` directories).
+2. Copy the `docker-compose.yml` file into each processwire project directory.
 3. Set `VIRTUAL_HOST` variable in the `docker-compose.yml` file.
-3. Update `site/config.php` with correct database and hostname info.
 4. Run `docker-compose up -d`.
+
+5. Update `src/site/config.php` with correct database and hostname info.
+
 
 
 
