@@ -1,0 +1,11 @@
+FROM gebeer/alpine-php-processwire
+MAINTAINER rastographics <rastographics@gmail.com>
+
+RUN apk add --update php7-xdebug && \
+echo 'zend_extension=/usr/lib/php7/modules/xdebug.so' >> /etc/php7/conf.d/xdebug.ini && \
+echo 'xdebug.remote_enable=1' >> /etc/php7/conf.d/xdebug.ini && \
+# echo 'xdebug.remote_handler=dbgp' >> /etc/php7/conf.d/xdebug.ini && \
+# echo 'xdebug.remote_mode=req' >> /etc/php7/conf.d/xdebug.ini && \
+echo 'xdebug.remote_connect_back=1' >> /etc/php7/conf.d/xdebug.ini && \
+echo 'xdebug.remote_log="/DATA/logs/xdebug.log"' >> /etc/php7/conf.d/xdebug.ini && \
+echo 'xdebug.remote_autostart=1' >> /etc/php7/conf.d/xdebug.ini
