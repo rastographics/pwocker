@@ -1,0 +1,2 @@
+docker network create -d bridge proxy
+docker run -d --name nginx --network=proxy --restart=always -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro -v /etc/nginx/vhost.d:/etc/nginx/vhost.d:ro etopian/nginx-proxy
