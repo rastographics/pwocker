@@ -2,7 +2,7 @@ version: '3'
 services:
   pw:
     environment: 
-       - VIRTUAL_HOST=missions.localtest.me
+       - VIRTUAL_HOST=yourapp.localtest.me # *.localtest.me subdomains will always point to 127.0.0.1 on every computer in the world...easy way to use multiple hostnames on a windows dev machine.
      depends_on:
        - db
      image: gebeer/alpine-php-processwire
