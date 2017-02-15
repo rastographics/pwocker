@@ -5,14 +5,17 @@ Here are the advantages of this processwire/docker combo
 ## For Windows Developers
 I'm using this on a Windows 10 Pro 64-bit machine. So I know it works on that.
 
+## Local Debugging!
+Xdebug works with this setup. Included a working VS Code debug config under .vscode/launch.json
+
 ## Flexible stack
 - Uses a separate "shared" Nginx Proxy container that runs all the time, and automatically routes requests to correct Processwire app based on the hostname in URL.
 - Each app has it's own PHP and MySql(MariaDb) containers
 
 ## Simple configuration
 1. Start the Nginx Proxy globally with one command (or just double-click the `proxy-up.cmd` file!)
-2. Copy the `docker-compose.yml` file into each processwire project directory.
-3. Set `VIRTUAL_HOST` variable in the `docker-compose.yml` file.
+2. Copy the `docker-compose.yml` and `Dockerfile-php` files into each processwire project directory.
+3. Set `VIRTUAL_HOST` and `docker_hostip` variables in the `docker-compose.yml` file.
 4. Run `docker-compose up -d`.
 
 5. Update `src/site/config.php` with correct database and hostname info.
