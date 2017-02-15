@@ -8,6 +8,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-php
+      args:
+        - docker_hostip=10.7.0.164
     image: joel-alpine-php-processwire
     networks:
       - default
