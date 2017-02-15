@@ -17,8 +17,8 @@ Xdebug works with this setup. Included a working VS Code debug config under .vsc
 2. Copy the `docker-compose.yml` and `Dockerfile-php` files into each processwire project directory.
 3. Set `VIRTUAL_HOST` and `docker_hostip` variables in the `docker-compose.yml` file.
 4. Run `docker-compose up -d`.
-
-5. Update `src/site/config.php` with correct database and hostname info.
+5. Copy your processwire site (or new processwire install) into the `src` directory that appears.
+5. Update `src/site/config.php` with correct database and hostname info (see below). Or if it's a new install, follow the installation wizard and enjoy your new site.
 
 
 
