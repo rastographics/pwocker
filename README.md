@@ -16,9 +16,11 @@ Xdebug works with this setup. Included a working VS Code debug config under .vsc
 1. Start the Nginx Proxy globally with one command (or just double-click the `proxy-up.cmd` file!)
 2. Copy the `docker-compose.yml` and `Dockerfile-php` files into each processwire project directory.
 3. Set `VIRTUAL_HOST` and `docker_hostip` variables in the `docker-compose.yml` file.
+  - `VIRTUAL_HOST` = `myappname.localtest.me` (or whateveryouwant.localtest.me)
+  - `docker_hostip` = Local IP address of your Physical Host Machine
 4. Run `docker-compose up -d`.
-5. Copy your processwire site (or new processwire install) into the `src` directory that appears.
-5. Update `src/site/config.php` with correct database and hostname info (see below). Or if it's a new install, follow the installation wizard and enjoy your new site.
+5. A `src` directory will be created, with a fresh copy of the latest processwire dev version downloaded from github.
+6. In a browser, visit `myappname.localtest.me` (or whateveryouwant.localtest.me) and enjoy the Processwire Setup wizard!
 
 
 

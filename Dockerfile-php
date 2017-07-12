@@ -20,5 +20,9 @@ echo 'xdebug.remote_enable=on' >> /etc/php7/conf.d/xdebug.ini && \
 echo 'xdebug.remote_connect_back=0' >> /etc/php7/conf.d/xdebug.ini && \
 echo 'xdebug.remote_log="/DATA/logs/xdebug.log"' >> /etc/php7/conf.d/xdebug.ini && \
 echo "xdebug.remote_host=$docker_hostip" >> /etc/php7/conf.d/xdebug.ini && \
-echo 'xdebug.remote_autostart=on' >> /etc/php7/conf.d/xdebug.ini
+echo 'xdebug.remote_autostart=on' >> /etc/php7/conf.d/xdebug.ini && \ 
 
+cd /tmp && \ 
+git clone https://github.com/processwire/processwire.git && \
+cd processwire && git checkout dev && \
+cp -R ./ /DATA/htdocs
