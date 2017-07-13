@@ -6,7 +6,12 @@ Here are the advantages of this processwire/docker combo
 I'm using this on a Windows 10 Pro 64-bit machine. So I know it works on that.
 
 ## Local Debugging!
-Xdebug works with this setup. Included a working VS Code debug config under .vscode/launch.json
+Xdebug works! Included a working VS Code debug config example under .vscode/launch.json.
+
+1. Install the [Xdebug helper chrome extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc)
+2. In the extensions's options, set the IDE Key to "Other" with a value of `chromeextension`
+3. Now you can enable and disable debugging through a simple click.
+
 
 ## Easy configuration for developing multiple apps simultaneously 
 - Uses a separate "shared" Nginx Proxy container that runs all the time, and automatically routes requests to correct Processwire app based on the hostname in URL.
@@ -20,7 +25,7 @@ Xdebug works with this setup. Included a working VS Code debug config under .vsc
   - `docker_hostip` = Local IP address of your Physical Host Machine
 4. Run `docker-compose up -d`.
 5. A `src` directory will be created.
-6. Right-click on `get-processwire.ps1` and Run with Powershell. This copies latest dev version of Processwire AND the new Foundation 6 site profile right to the src folder.
+6. Right-click on `app-install.ps1` and Run with Powershell. Or in Powershell terminal, type `./app-install`. This copies latest dev version of Processwire AND the new Foundation 6 site profile right to the src folder.
 7. In a browser, visit `myappname.localtest.me` (or whateveryouwant.localtest.me) and enjoy the Processwire Setup wizard!
 
 

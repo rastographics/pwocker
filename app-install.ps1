@@ -23,7 +23,10 @@ git checkout precompiled;
 cd ..;
 
 Write-Host "Moving foundation 6 profile to src folder"
-Get-childitem -Path site-fdn6 -Exclude ".git"  | Move-Item -Destination "src/site-foundation6";
+Move-Item -Path 'site-fdn6' -Destination 'src' -Force
+Remove-Item -Path 'src/site-fdn6/.git' -Recurse -Force
 
 Remove-Item -Path processwire -Recurse -Force
-Remove-Item -Path site-fdn6 -Recurse -Force
+
+
+docker-compose up -d;

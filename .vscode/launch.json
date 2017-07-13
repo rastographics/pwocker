@@ -1,13 +1,24 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
+          {
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
             "port": 9000,
             "serverSourceRoot": "/DATA/htdocs",
-            "localSourceRoot": "${workspaceRoot}/src"
+            "localSourceRoot": "${workspaceRoot}/src",
+            "xdebugSettings":{
+            }
+        },
+        {
+            "type": "PowerShell",
+            "request": "launch",
+            "name": "PowerShell Launch Current File",
+            "script": "${file}",
+            "args": [],
+            "cwd": "${file}"
         }
+      
     ]
 }
