@@ -13,16 +13,15 @@ apk add openssl php7-dev gcc musl-dev make \
 && ./configure \
 && make \
 && cp modules/xdebug.so /usr/lib/php7/modules \
-
+# https://stackoverflow.com/questions/17736304/enabling-xdebug-remote-debug-makes-apache-server-very-slow
 && echo '[xdebug]' > /etc/php7/conf.d/xdebug.ini && \
 echo 'zend_extension=/usr/lib/php7/modules/xdebug.so' >> /etc/php7/conf.d/xdebug.ini && \
 echo 'xdebug.remote_enable=on' >> /etc/php7/conf.d/xdebug.ini && \
+echo 'xdebug.profiler_enable=0' >> /etc/php7/conf.d/xdebug.ini && \
 echo 'xdebug.remote_connect_back=0' >> /etc/php7/conf.d/xdebug.ini && \
 echo 'xdebug.remote_log="/DATA/logs/xdebug.log"' >> /etc/php7/conf.d/xdebug.ini && \
 echo "xdebug.remote_host=$docker_hostip" >> /etc/php7/conf.d/xdebug.ini && \
-echo 'xdebug.remote_autostart=on' >> /etc/php7/conf.d/xdebug.ini && \ 
+echo 'xdebug.remote_autostart=0' >> /etc/php7/conf.d/xdebug.ini && \ 
+echo 'xdebug.remote_cookie_expire_time = -9999' >> /etc/php7/conf.d/xdebug.ini
 
-cd /tmp && \ 
-git clone https://github.com/processwire/processwire.git && \
-cd processwire && git checkout dev && \
-cp -R ./ /DATA/htdocs
+

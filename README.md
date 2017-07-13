@@ -8,19 +8,20 @@ I'm using this on a Windows 10 Pro 64-bit machine. So I know it works on that.
 ## Local Debugging!
 Xdebug works with this setup. Included a working VS Code debug config under .vscode/launch.json
 
-## Flexible stack
+## Easy configuration for developing multiple apps simultaneously 
 - Uses a separate "shared" Nginx Proxy container that runs all the time, and automatically routes requests to correct Processwire app based on the hostname in URL.
 - Each app has it's own PHP and MySql(MariaDb) containers
 
 ## Simple configuration
-1. Start the Nginx Proxy globally with one command (or just double-click the `proxy-up.cmd` file!)
-2. Copy the `docker-compose.yml` and `Dockerfile-php` files into each processwire project directory.
+1. Start the Nginx Proxy globally with one command (or just double-click the `proxy-up.cmd` file!). This needs to be done only once for all apps.
+2. Copy the `docker-compose.yml`, `Dockerfile-php`, and `get-processwire.ps1` files into your project directory. (Repeat this step for each separate project).
 3. Set `VIRTUAL_HOST` and `docker_hostip` variables in the `docker-compose.yml` file.
   - `VIRTUAL_HOST` = `myappname.localtest.me` (or whateveryouwant.localtest.me)
   - `docker_hostip` = Local IP address of your Physical Host Machine
 4. Run `docker-compose up -d`.
-5. A `src` directory will be created, with a fresh copy of the latest processwire dev version downloaded from github.
-6. In a browser, visit `myappname.localtest.me` (or whateveryouwant.localtest.me) and enjoy the Processwire Setup wizard!
+5. A `src` directory will be created.
+6. Right-click on `get-processwire.ps1` and Run with Powershell. This copies latest dev version of Processwire AND the new Foundation 6 site profile right to the src folder.
+7. In a browser, visit `myappname.localtest.me` (or whateveryouwant.localtest.me) and enjoy the Processwire Setup wizard!
 
 
 
